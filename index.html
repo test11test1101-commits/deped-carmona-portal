@@ -139,11 +139,11 @@
             <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
           </a>
           <div class="dropdown-menu">
-            <a href="#issuances-hub" class="dropdown-link">All Issuances Hub</a>
-            <a href="#issuances-hub" class="dropdown-link">Division Memoranda</a>
-            <a href="#issuances-hub" class="dropdown-link">Division Advisories</a>
-            <a href="#issuances-hub" class="dropdown-link">DepEd Memoranda</a>
-            <a href="#issuances-hub" class="dropdown-link">Notice of Meeting</a>
+            <a href="#issuances-hub" onclick="setIssuanceTab('all')" class="dropdown-link">All Issuances Hub</a>
+            <a href="#issuances-hub" onclick="setIssuanceTab('memo')" class="dropdown-link">Division Memoranda</a>
+            <a href="#issuances-hub" onclick="setIssuanceTab('advisory')" class="dropdown-link">Division Advisories</a>
+            <a href="#issuances-hub" onclick="setIssuanceTab('memo')" class="dropdown-link">DepEd Memoranda</a>
+            <a href="#issuances-hub" onclick="setIssuanceTab('meeting')" class="dropdown-link">Notice of Meeting</a>
           </div>
         </li>
 
@@ -821,6 +821,455 @@
     </div>
   </div>
 
+  <!-- Modal 7: DepEd VMV & Mandate -->
+  <div id="vmv-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="vmv-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="vmv-modal-title" class="modal-title">DepEd Vision, Mission, Core Values & Mandate</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.7;">
+        <!-- Vision -->
+        <div style="background: #edf3f0; border-left: 4px solid var(--deped-gold); padding: 1.15rem; border-radius: 6px; margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <span>👁️</span> The DepEd Vision
+          </h4>
+          <p style="font-size: 0.925rem; color: #1e293b; font-style: italic;">
+            "We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation.<br><br>
+            As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders."
+          </p>
+        </div>
+
+        <!-- Mission -->
+        <div style="background: #edf3f0; border-left: 4px solid var(--deped-blue); padding: 1.15rem; border-radius: 6px; margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+            <span>🎯</span> The DepEd Mission
+          </h4>
+          <p style="font-size: 0.925rem; color: #1e293b; margin-bottom: 0.5rem;">
+            To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where:
+          </p>
+          <ul style="font-size: 0.875rem; color: #334155; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem;">
+            <li><strong>Students</strong> learn in a child-friendly, gender-sensitive, safe, and motivating environment.</li>
+            <li><strong>Teachers</strong> facilitate learning and constantly nurture every learner.</li>
+            <li><strong>Administrators and staff</strong>, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen.</li>
+            <li><strong>Family, community, and other stakeholders</strong> are actively engaged and share responsibility for developing life-long learners.</li>
+          </ul>
+        </div>
+
+        <!-- Core Values -->
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.4rem;">
+            <span>🌟</span> Core Values
+          </h4>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+            <div style="padding: 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.4rem;">🕊️</span>
+              <div>
+                <strong style="color: var(--deped-navy); display: block; font-size: 0.9rem;">Maka-Diyos</strong>
+                <span style="font-size: 0.775rem; color: var(--text-muted);">Faith & Moral Integrity</span>
+              </div>
+            </div>
+            <div style="padding: 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.4rem;">🤝</span>
+              <div>
+                <strong style="color: var(--deped-navy); display: block; font-size: 0.9rem;">Maka-tao</strong>
+                <span style="font-size: 0.775rem; color: var(--text-muted);">Compassion & Inclusivity</span>
+              </div>
+            </div>
+            <div style="padding: 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.4rem;">🌿</span>
+              <div>
+                <strong style="color: var(--deped-navy); display: block; font-size: 0.9rem;">Makakalikasan</strong>
+                <span style="font-size: 0.775rem; color: var(--text-muted);">Environmental Stewardship</span>
+              </div>
+            </div>
+            <div style="padding: 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.4rem;">🇵🇭</span>
+              <div>
+                <strong style="color: var(--deped-navy); display: block; font-size: 0.9rem;">Makabansa</strong>
+                <span style="font-size: 0.775rem; color: var(--text-muted);">Patriotism & Public Service</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legal Mandate -->
+        <div style="background: #f8fafc; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.85rem; color: #475569;">
+          <strong style="color: var(--deped-navy);">Official Mandate (RA 9155):</strong> The Department of Education establishes and maintains a complete, adequate, and integrated system of basic education relevant to the goals of national development and guided by the DepEd MATATAG agenda: <em>Bansang Makabata, Batang Makabansa</em>.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8: SDO Carmona City History -->
+  <div id="history-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="history-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="history-modal-title" class="modal-title">SDO Carmona City History & Milestones</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.7;">
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.25rem; background: #edf3f0; padding: 1rem; border-radius: 8px;">
+          <img src="assets/SDO-Carmona-300x300.jpg" alt="Official Seal of SDO Carmona" style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--deped-gold); flex-shrink: 0;">
+          <div>
+            <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.2rem;">City Schools Division of Carmona</h4>
+            <p style="font-size: 0.825rem; color: var(--text-muted);">Department of Education &bull; Region IV-A CALABARZON</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; position: relative; border-left: 2px solid var(--border-subtle); margin-left: 0.75rem; padding-left: 1.25rem;">
+          <div style="position: relative;">
+            <div style="position: absolute; left: -1.7rem; top: 0.25rem; width: 14px; height: 14px; border-radius: 50%; background: var(--deped-blue); border: 3px solid #ffffff;"></div>
+            <strong style="color: var(--deped-navy); font-size: 0.95rem;">Carmona Educational Cluster (Pre-Cityhood)</strong>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.25rem;">
+              Carmona schools originally operated with distinction under the Schools Division Office of Cavite Province, establishing renowned academic benchmarks, athletic championships, and strong community-school linkages across elementary and secondary clusters.
+            </p>
+          </div>
+
+          <div style="position: relative;">
+            <div style="position: absolute; left: -1.7rem; top: 0.25rem; width: 14px; height: 14px; border-radius: 50%; background: var(--deped-gold); border: 3px solid #ffffff;"></div>
+            <strong style="color: var(--deped-navy); font-size: 0.95rem;">Ratification of Republic Act No. 11938 (July 8, 2023)</strong>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.25rem;">
+              With overwhelming democratic support in the plebiscite, Carmona was formally converted into a component city of Cavite. This historic elevation laid the legal and operational foundation for an autonomous City Schools Division.
+            </p>
+          </div>
+
+          <div style="position: relative;">
+            <div style="position: absolute; left: -1.7rem; top: 0.25rem; width: 14px; height: 14px; border-radius: 50%; background: var(--deped-navy); border: 3px solid #ffffff;"></div>
+            <strong style="color: var(--deped-navy); font-size: 0.95rem;">Creation of the City Schools Division of Carmona</strong>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.25rem;">
+              The establishment of SDO Carmona under DepEd CALABARZON brought direct governance, localized curriculum enhancements, dedicated financial stewardship, and fast frontline services to all public elementary and secondary schools in the City of Carmona.
+            </p>
+          </div>
+
+          <div style="position: relative;">
+            <div style="position: absolute; left: -1.7rem; top: 0.25rem; width: 14px; height: 14px; border-radius: 50%; background: #16a34a; border: 3px solid #ffffff;"></div>
+            <strong style="color: var(--deped-navy); font-size: 0.95rem;">Present: Transforming Basic Education under MATATAG</strong>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.25rem;">
+              Today, SDO Carmona champions transparent governance, digital record tracking, learning recovery programs, and faculty excellence celebrated annually through the Gawad Dalub-Kandili awards.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9: Division Officials -->
+  <div id="officials-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="officials-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="officials-modal-title" class="modal-title">Directory of Division Officials</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.6;">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          Key officials and unit heads of the City Schools Division of Carmona committed to prompt, accessible, and accountable public service:
+        </p>
+
+        <!-- OSDS Section -->
+        <div style="margin-bottom: 1.25rem;">
+          <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--deped-navy); background: #edf3f0; padding: 0.45rem 0.75rem; border-radius: 4px; border-left: 3px solid var(--deped-gold); margin-bottom: 0.65rem;">
+            Office of the Schools Division Superintendent (OSDS)
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.875rem;">
+            <div style="padding: 0.5rem 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: var(--deped-navy);">Schools Division Superintendent</strong>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Head of Division / Chief Executive</div>
+              </div>
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">OSDS</span>
+            </div>
+            <div style="padding: 0.5rem 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: var(--deped-navy);">Assistant Schools Division Superintendent</strong>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Assistant Head of Division</div>
+              </div>
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">OASDS</span>
+            </div>
+            <div style="padding: 0.5rem 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: var(--deped-navy);">Administrative Officer V (Administrative Services)</strong>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Records, Cash, Property & Personnel Units</div>
+              </div>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">Admin</span>
+            </div>
+            <div style="padding: 0.5rem 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: var(--deped-navy);">Accountant III (Finance & Accounting Unit)</strong>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Disbursements, School MOOE, Financial Reports</div>
+              </div>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">Finance</span>
+            </div>
+            <div style="padding: 0.5rem 0.75rem; background: #ffffff; border: 1px solid var(--border-light); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: var(--deped-navy);">Information Technology Officer I (ICT Unit)</strong>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Information Systems, Web Portal & Digital Systems</div>
+              </div>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">ICT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CID & SGOD Section -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-light);">
+            <strong style="color: var(--deped-navy); font-size: 0.875rem; display: block; margin-bottom: 0.25rem;">Curriculum Implementation (CID)</strong>
+            <p style="font-size: 0.8rem; color: #475569;">
+              <strong>Chief Education Supervisor</strong><br>
+              Instructional Management (EPS), District Supervision (PSDS), Learning Resources (LRMS), and Alternative Learning System (ALS).
+            </p>
+          </div>
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-light);">
+            <strong style="color: var(--deped-navy); font-size: 0.875rem; display: block; margin-bottom: 0.25rem;">Governance & Operations (SGOD)</strong>
+            <p style="font-size: 0.8rem; color: #475569;">
+              <strong>Chief Education Supervisor</strong><br>
+              Planning & Research, School Health & Nutrition, Disaster Risk Reduction (DRRM), Facilities & Social Mobilization.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Directory</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10: Organizational Chart -->
+  <div id="orgchart-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="orgchart-modal-title">
+    <div class="modal-card" style="max-width: 780px;">
+      <div class="modal-header">
+        <h3 id="orgchart-modal-title" class="modal-title">SDO Carmona Organizational Structure</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.6;">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem; text-align: center;">
+          Organizational hierarchy pursuant to Republic Act No. 9155 and Department of Education Standard Staffing Pattern:
+        </p>
+
+        <!-- Hierarchy Flowchart -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+          <!-- Level 1: SDS -->
+          <div style="background: var(--deped-navy); color: #ffffff; padding: 0.85rem 1.5rem; border-radius: 8px; text-align: center; border: 2px solid var(--deped-gold); width: 85%; max-width: 420px; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--deped-gold);">Executive Leadership</div>
+            <strong style="font-size: 1rem; display: block;">Office of the Schools Division Superintendent</strong>
+            <span style="font-size: 0.8rem; color: #cbd5e1;">Superintendent (SDS) &bull; Assistant Superintendent (ASDS)</span>
+          </div>
+
+          <!-- Connector -->
+          <div style="width: 2px; height: 16px; background: var(--deped-gold);"></div>
+
+          <!-- Level 2: Support Staff Units -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; width: 100%;">
+            <div style="background: #edf3f0; border: 1px solid var(--border-light); border-radius: 6px; padding: 0.5rem; text-align: center; font-size: 0.775rem;">
+              <strong style="color: var(--deped-navy); display: block;">Legal Unit</strong>
+              <span style="color: var(--text-muted);">Legal Officer III</span>
+            </div>
+            <div style="background: #edf3f0; border: 1px solid var(--border-light); border-radius: 6px; padding: 0.5rem; text-align: center; font-size: 0.775rem;">
+              <strong style="color: var(--deped-navy); display: block;">ICT Unit</strong>
+              <span style="color: var(--text-muted);">IT Officer I</span>
+            </div>
+            <div style="background: #edf3f0; border: 1px solid var(--border-light); border-radius: 6px; padding: 0.5rem; text-align: center; font-size: 0.775rem;">
+              <strong style="color: var(--deped-navy); display: block;">Administrative</strong>
+              <span style="color: var(--text-muted);">Admin Officer V</span>
+            </div>
+            <div style="background: #edf3f0; border: 1px solid var(--border-light); border-radius: 6px; padding: 0.5rem; text-align: center; font-size: 0.775rem;">
+              <strong style="color: var(--deped-navy); display: block;">Finance Unit</strong>
+              <span style="color: var(--text-muted);">Accountant III</span>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div style="width: 2px; height: 16px; background: var(--deped-gold);"></div>
+
+          <!-- Level 3: Dual Division Pillars -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%;">
+            <!-- CID Card -->
+            <div style="border: 2px solid var(--deped-blue); border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: var(--deped-blue); color: #ffffff; padding: 0.65rem; text-align: center;">
+                <strong style="font-size: 0.9rem; display: block;">Curriculum Implementation (CID)</strong>
+                <span style="font-size: 0.725rem; color: #cbd5e1;">Chief Education Supervisor</span>
+              </div>
+              <ul style="padding: 0.75rem 1rem; font-size: 0.775rem; color: #334155; list-style: disc; margin-left: 1rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                <li>Instructional Management (EPS)</li>
+                <li>District Supervision (PSDS)</li>
+                <li>Learning Resources (LRMS)</li>
+                <li>Alternative Learning System (ALS)</li>
+              </ul>
+            </div>
+
+            <!-- SGOD Card -->
+            <div style="border: 2px solid var(--deped-navy); border-radius: 8px; overflow: hidden; background: #ffffff;">
+              <div style="background: var(--deped-navy); color: #ffffff; padding: 0.65rem; text-align: center;">
+                <strong style="font-size: 0.9rem; display: block;">Governance & Operations (SGOD)</strong>
+                <span style="font-size: 0.725rem; color: #cbd5e1;">Chief Education Supervisor</span>
+              </div>
+              <ul style="padding: 0.75rem 1rem; font-size: 0.775rem; color: #334155; list-style: disc; margin-left: 1rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                <li>Planning, Policy & Research</li>
+                <li>Human Resource Development (HRDD)</li>
+                <li>School Health & Nutrition Section</li>
+                <li>DRRM & Educational Facilities</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Connector -->
+          <div style="width: 2px; height: 16px; background: var(--deped-gold);"></div>
+
+          <!-- Level 4: Schools & Learning Centers -->
+          <div style="background: #edf3f0; border: 1px dashed var(--deped-navy); border-radius: 8px; padding: 0.75rem 1.25rem; text-align: center; width: 100%;">
+            <strong style="color: var(--deped-navy); font-size: 0.9rem; display: block;">Carmona Learning Communities & Frontline Delivery</strong>
+            <span style="font-size: 0.775rem; color: var(--text-muted);">
+              Public Elementary Schools &bull; Junior High Schools &bull; Senior High Schools &bull; Community Learning Centers (CLC)
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Chart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11: Data Privacy Notice -->
+  <div id="privacy-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="privacy-modal-title" class="modal-title">Data Privacy Notice & Protection Policy</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.7;">
+        <div style="background: #edf3f0; border-left: 4px solid var(--deped-navy); padding: 1rem; border-radius: 6px; margin-bottom: 1.25rem;">
+          <h4 style="font-size: 1rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.35rem;">Commitment to Republic Act No. 10173</h4>
+          <p style="font-size: 0.85rem; color: #334155;">
+            The City Schools Division of Carmona adheres strictly to the Data Privacy Act of 2012 (RA 10173) and National Privacy Commission guidelines to safeguard all personal and sensitive information entrusted to our care.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.875rem;">
+          <div>
+            <strong style="color: var(--deped-navy); display: block; margin-bottom: 0.2rem;">1. Information We Collect</strong>
+            <p style="color: #475569; font-size: 0.825rem;">
+              Learner information (LIS data, enrollment forms, academic credentials), personnel service records, visitor logs, and public feedback submissions through the Client Satisfaction Measurement (CSM) system.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: var(--deped-navy); display: block; margin-bottom: 0.2rem;">2. Purpose of Processing</strong>
+            <p style="color: #475569; font-size: 0.825rem;">
+              Data is processed solely for educational administration, verification of official scholastic records, personnel management, statistical reporting to DepEd Regional and Central Offices, and addressing public inquiries.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: var(--deped-navy); display: block; margin-bottom: 0.2rem;">3. Data Security & Storage</strong>
+            <p style="color: #475569; font-size: 0.825rem;">
+              Physical documents and digital databases are secured under strict multi-factor access protocols, encryption, and institutional safeguards. No personal data is shared with third parties without authorized statutory consent.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: var(--deped-navy); display: block; margin-bottom: 0.2rem;">4. Data Subject Rights & Contact</strong>
+            <p style="color: #475569; font-size: 0.825rem;">
+              You have the right to request access to, rectify, or lodge inquiries regarding your personal information. Reach our Division Data Protection Officer at: <strong>carmonacity@deped.gov.ph</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 12: Procurement & BAC Opportunities -->
+  <div id="procurement-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="procurement-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="procurement-modal-title" class="modal-title">Bids and Awards Committee (BAC) & Procurement</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.6;">
+        <p style="font-size: 0.85rem; color: #334155; margin-bottom: 1.25rem;">
+          In full compliance with Republic Act No. 9184 (Government Procurement Reform Act) and PhilGEPS transparency rules, SDO Carmona publishes all public bidding notices, Requests for Quotation (RFQ), and BAC resolutions:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="background: #ffffff; border: 1px solid var(--border-light); border-left: 4px solid var(--deped-gold); padding: 0.85rem 1rem; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+              <span style="font-size: 0.725rem; font-weight: 700; background: #fef3c7; color: #b45309; padding: 0.15rem 0.5rem; border-radius: 4px;">ACTIVE RFQ</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Deadline: Oct 30, 2026</span>
+            </div>
+            <strong style="color: var(--deped-navy); font-size: 0.9rem; display: block;">RFQ-2026-10-044: Procurement of Office Supplies & Materials for 4th Quarter Operations</strong>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Approved Budget for the Contract (ABC): Php 185,000.00</div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-light); border-left: 4px solid var(--deped-blue); padding: 0.85rem 1rem; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+              <span style="font-size: 0.725rem; font-weight: 700; background: #e0f2fe; color: #0284c7; padding: 0.15rem 0.5rem; border-radius: 4px;">INVITATION TO BID</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Pre-bid: Nov 05, 2026</span>
+            </div>
+            <strong style="color: var(--deped-navy); font-size: 0.9rem; display: block;">ITB-2026-11-012: Repair and Upgrading of Science Laboratories in Carmona High Schools</strong>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Approved Budget for the Contract (ABC): Php 1,450,000.00</div>
+          </div>
+
+          <div style="background: #f8fafc; padding: 0.85rem 1rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.825rem; color: #475569;">
+            <strong style="color: var(--deped-navy);">Submission & Inquiries:</strong> Sealed bids and quotation proposals may be submitted to the SDO Carmona BAC Secretariat Office or emailed to <strong>carmonacity@deped.gov.ph</strong>.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 13: Careers & Job Vacancies -->
+  <div id="careers-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="careers-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="careers-modal-title" class="modal-title">Careers & Employment Opportunities</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.6;">
+        <div style="background: #edf3f0; border-left: 4px solid var(--deped-gold); padding: 0.85rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.85rem; color: #1e293b;">
+          <strong>Equal Employment Opportunity:</strong> SDO Carmona City strictly adheres to the principle of merit, fitness, and non-discrimination on account of age, sex, sexual orientation, gender identity, civil status, disability, religion, ethnicity, or political affiliation.
+        </div>
+
+        <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--deped-navy); margin-bottom: 0.5rem;">Current Vacant Positions:</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.25rem;">
+          <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 0.75rem 1rem; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="color: var(--deped-navy); font-size: 0.9rem;">Teacher I (Elementary & Secondary)</strong>
+              <span style="font-size: 0.725rem; background: #dcfce7; color: #15803d; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px;">OPEN</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Salary Grade 11 &bull; Division-wide Pool &bull; CSC Qualified</div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 0.75rem 1rem; border-radius: 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <strong style="color: var(--deped-navy); font-size: 0.9rem;">Administrative Aide VI (Data Controller)</strong>
+              <span style="font-size: 0.725rem; background: #dcfce7; color: #15803d; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px;">OPEN</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Salary Grade 6 &bull; Records Section &bull; Civil Service Eligible</div>
+          </div>
+        </div>
+
+        <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.825rem; color: #475569;">
+          <strong style="color: var(--deped-navy);">Documentary Requirements:</strong> Letter of intent addressed to the Schools Division Superintendent, updated CS Form 212 (PDS), Transcript of Records, PRC ID (if applicable), and Certificate of Eligibility.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Mobile Drawer -->
   <div id="mobile-drawer" class="mobile-nav-drawer" role="dialog" aria-modal="true">
     <div class="mobile-drawer-header">
@@ -829,10 +1278,17 @@
     </div>
     <ul class="mobile-drawer-links">
       <li><a href="#">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('vmv-modal')">DepEd VMV & Mandate</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('history-modal')">SDO Carmona History</a></li>
       <li><a href="javascript:void(0)" onclick="openModal('charter-modal')">Citizen's Charter</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('officials-modal')">Division Officials</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('orgchart-modal')">Organizational Chart</a></li>
       <li><a href="#issuances-hub">Division Issuances</a></li>
       <li><a href="#dts-tracker">Document Tracking</a></li>
       <li><a href="javascript:void(0)" onclick="openModal('transparency-modal')">Transparency Seal</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('procurement-modal')">Procurement & BAC</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('careers-modal')">Careers & Vacancies</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('privacy-modal')">Data Privacy Notice</a></li>
       <li><a href="javascript:void(0)" onclick="openModal('csm-modal')">Client Feedback (CSM)</a></li>
       <li><a href="#footer-section">Contact Directory</a></li>
     </ul>

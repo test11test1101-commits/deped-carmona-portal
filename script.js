@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccessibilitySuite();
   initModals();
   initMobileDrawer();
+  initNavDropdowns();
   initVisitorCounter();
 });
 
@@ -522,11 +523,30 @@ function initModals() {
 
 window.openModal = function(modalId) {
   const modal = document.getElementById(modalId);
-  if (modal) modal.classList.add('active');
+  if (modal) {
+    modal.classList.add('active');
+    // Close mobile drawer if active
+    const drawer = document.getElementById('mobile-drawer');
+    if (drawer) drawer.classList.remove('active');
+    // Close any open navigation dropdowns
+    document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
+  } else {
+    console.warn(`Modal "${modalId}" not found.`);
+  }
+};
+
+window.setIssuanceTab = function(filter) {
+  const tabs = document.querySelectorAll('.issuance-tabs .tab-btn');
+  tabs.forEach(tab => {
+    if (tab.getAttribute('data-filter') === filter) {
+      tab.click();
+    }
+  });
+  document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
 };
 
 /* ==========================================================================
-   7. MOBILE NAVIGATION DRAWER
+   7. MOBILE NAVIGATION DRAWER & TOUCH DROPDOWNS
    ========================================================================== */
 function initMobileDrawer() {
   const toggleBtn = document.getElementById('mobile-menu-btn');
@@ -544,6 +564,31 @@ function initMobileDrawer() {
       drawer.classList.remove('active');
     });
   }
+}
+
+function initNavDropdowns() {
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => {
+    const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown-menu');
+    if (link && dropdown) {
+      link.addEventListener('click', (e) => {
+        // Toggle dropdown open state on click/touch
+        const isOpen = item.classList.contains('open');
+        navItems.forEach(other => other.classList.remove('open'));
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    }
+  });
+
+  // Clicking outside any dropdown closes them
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(item => item.classList.remove('open'));
+    }
+  });
 }
 
 /* ==========================================================================
