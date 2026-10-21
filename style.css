@@ -1,0 +1,1667 @@
+/* ==========================================================================
+   CITY SCHOOLS DIVISION OF CARMONA - OFFICIAL PORTAL STYLESHEET
+   Enhanced Government Web Design Standard (GWDS 2.0)
+   Built with Pure Vanilla CSS (No External Bloat/Plugins)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cinzel:wght@600;700&display=swap');
+
+:root {
+  /* Official Brand Colors */
+  --deped-navy: #002855;
+  --deped-navy-dark: #001833;
+  --deped-navy-deep: #071527;
+  --deped-blue: #004b98;
+  --deped-blue-light: #0b69c7;
+  --deped-gold: #f5a81c;
+  --deped-gold-light: #ffc955;
+  --deped-gold-dark: #d48b0a;
+  --deped-red: #c8102e;
+  --deped-red-dark: #9e0b23;
+  --gov-blue: #003366;
+  
+  /* Neutral & UI Colors */
+  --bg-body: #f4f6fa;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f8fafc;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-inverse: #ffffff;
+  --border-light: #e2e8f0;
+  --border-subtle: #cbd5e1;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 40, 85, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 40, 85, 0.08);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 40, 85, 0.12), 0 8px 10px -6px rgba(0, 40, 85, 0.08);
+  --shadow-xl: 0 20px 35px -5px rgba(0, 40, 85, 0.16);
+
+  /* Layout */
+  --header-height: 85px;
+  --max-width: 1320px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cinzel', serif;
+}
+
+/* ==========================================================================
+   HIGH CONTRAST & ACCESSIBILITY MODES
+   ========================================================================== */
+body.high-contrast {
+  --bg-body: #000000 !important;
+  --bg-surface: #121212 !important;
+  --bg-subtle: #1e1e1e !important;
+  --text-main: #ffff00 !important;
+  --text-muted: #ffffff !important;
+  --text-light: #00ffff !important;
+  --text-inverse: #000000 !important;
+  --border-light: #ffff00 !important;
+  --border-subtle: #ffff00 !important;
+  --deped-navy: #000000 !important;
+  --deped-navy-dark: #000000 !important;
+  --deped-blue: #00ffff !important;
+  --deped-gold: #ffff00 !important;
+  --deped-red: #ff3333 !important;
+  color: #ffff00 !important;
+  background-color: #000000 !important;
+}
+
+body.high-contrast a {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast button {
+  border: 2px solid #ffff00 !important;
+  background: #000000 !important;
+  color: #ffff00 !important;
+}
+
+/* Font Resizing Classes */
+body.font-sm { font-size: 14px; }
+body.font-md { font-size: 16px; }
+body.font-lg { font-size: 18.5px; }
+
+/* Dyslexia Friendly Mode */
+body.dyslexia-font {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.8 !important;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--deped-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--deped-navy);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY SKIP LINKS
+   ========================================================================== */
+.skip-links a {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--deped-gold);
+  color: var(--deped-navy-dark);
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  z-index: 99999;
+  box-shadow: var(--shadow-lg);
+  transition: top 0.2s ease;
+}
+
+.skip-links a:focus {
+  top: 15px;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR (GOVPH & ACCESSIBILITY & PST)
+   ========================================================================== */
+.top-govbar {
+  background-color: var(--deped-navy-dark);
+  color: #cbd5e1;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.top-govbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  gap: 1rem;
+}
+
+.govbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.govph-brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.govph-brand:hover {
+  color: var(--deped-gold);
+}
+
+.govph-tagline {
+  display: inline-block;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 1rem;
+}
+
+.govbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Philippine Standard Time (PST) Clock */
+.pst-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+}
+
+.pst-icon {
+  color: var(--deped-gold);
+  font-size: 0.85rem;
+}
+
+.pst-label {
+  font-weight: 600;
+  color: #94a3b8;
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pst-clock {
+  font-weight: 700;
+  color: #ffffff;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  min-width: 155px;
+}
+
+/* Accessibility Control Toolbar */
+.a11y-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.a11y-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.a11y-btn:hover {
+  background: var(--deped-gold);
+  color: var(--deped-navy-dark);
+}
+
+.a11y-btn[title="High Contrast"]:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ==========================================================================
+   MASTHEAD / AGENCY BRANDING HEADER
+   ========================================================================== */
+.agency-masthead {
+  background: linear-gradient(135deg, var(--deped-navy) 0%, #001f42 100%);
+  color: #ffffff;
+  padding: 1.25rem 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--deped-gold);
+}
+
+.agency-masthead::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(245, 168, 28, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.masthead-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.agency-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.agency-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.logo-gov {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+.logo-sdo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--deped-gold);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.agency-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.agency-republic {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--deped-gold-light);
+  font-weight: 600;
+}
+
+.agency-title {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0.15rem 0;
+}
+
+.agency-subtitle {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.agency-tagline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(245, 168, 28, 0.15);
+  border: 1px solid rgba(245, 168, 28, 0.35);
+  color: var(--deped-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+.masthead-hotline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hotline-icon {
+  font-size: 1.75rem;
+  color: var(--deped-gold);
+}
+
+.hotline-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotline-label {
+  font-size: 0.725rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+
+.hotline-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   PRIMARY NAVIGATION BAR (WITH STICKY & DROPDOWNS)
+   ========================================================================== */
+.main-navbar {
+  background-color: var(--deped-blue);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.05rem 1.15rem;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link,
+.nav-link.active {
+  background-color: var(--deped-navy);
+  color: var(--deped-gold);
+}
+
+.nav-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover > .nav-link svg {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 260px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--deped-gold);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.nav-item:hover > .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: var(--text-main);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dropdown-link:last-child {
+  border-bottom: none;
+}
+
+.dropdown-link:hover {
+  background-color: #f0f7ff;
+  color: var(--deped-blue);
+  padding-left: 1.5rem;
+}
+
+/* Nav Actions (Search & Mobile Toggle) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-input {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  padding: 0.45rem 1rem 0.45rem 2.25rem;
+  font-size: 0.85rem;
+  width: 170px;
+  transition: var(--transition);
+}
+
+.nav-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-search-input:focus {
+  outline: none;
+  background: #ffffff;
+  color: var(--text-main);
+  width: 240px;
+  box-shadow: 0 0 0 3px rgba(245, 168, 28, 0.4);
+}
+
+.nav-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+}
+
+/* ==========================================================================
+   NATIVE HERO CAROUSEL / BANNER (PLUGIN-FREE)
+   ========================================================================== */
+.hero-slider-section {
+  position: relative;
+  background-color: var(--deped-navy-deep);
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-item {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 21, 39, 0.95) 0%, rgba(7, 21, 39, 0.75) 50%, rgba(7, 21, 39, 0.4) 100%);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 10;
+  max-width: 720px;
+  color: #ffffff;
+  padding: 2rem 0;
+}
+
+.slide-badge {
+  display: inline-block;
+  background: var(--deped-gold);
+  color: var(--deped-navy-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.slide-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slide-description {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.slide-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--deped-gold);
+  color: var(--deped-navy-dark);
+  box-shadow: 0 4px 15px rgba(245, 168, 28, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--deped-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 168, 28, 0.45);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline-white:hover {
+  background: #ffffff;
+  color: var(--deped-navy);
+}
+
+/* Slider Controls */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: var(--transition);
+}
+
+.slider-arrow:hover {
+  background: var(--deped-gold);
+  color: var(--deped-navy-dark);
+  border-color: var(--deped-gold);
+}
+
+.slider-arrow.prev { left: 24px; }
+.slider-arrow.next { right: 24px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 20;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slider-dot.active {
+  background: var(--deped-gold);
+  width: 32px;
+}
+
+/* ==========================================================================
+   QUICK ACCESS ENTERPRISE PORTALS (ENHANCED GRID)
+   ========================================================================== */
+.quick-portals-section {
+  padding: 2rem 0;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.portals-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+.portal-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--deped-blue);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.portal-card:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-subtle);
+}
+
+.portal-card:hover::before {
+  opacity: 1;
+}
+
+.portal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(0, 75, 152, 0.1) 0%, rgba(245, 168, 28, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--deped-blue);
+  transition: var(--transition);
+}
+
+.portal-card:hover .portal-icon {
+  background: var(--deped-blue);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.portal-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.portal-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   MAIN TWO-COLUMN WORKSPACE
+   ========================================================================== */
+.main-content-layout {
+  padding: 3rem 0;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 2.25rem;
+}
+
+/* SECTION TITLES */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--deped-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.85rem;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--deped-gold);
+}
+
+/* ==========================================================================
+   ISSUANCES & MEMORANDUM HUB (ENHANCED DEFAULT PLUGIN)
+   ========================================================================== */
+.issuances-hub {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  margin-bottom: 2.5rem;
+}
+
+/* Filter Controls */
+.issuance-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.issuance-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  color: var(--deped-blue);
+  background: #ffffff;
+}
+
+.tab-btn.active {
+  background: var(--deped-blue);
+  color: #ffffff;
+  border-color: var(--deped-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.issuance-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+}
+
+.issuance-search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.issuance-search-bar input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Issuance Card List */
+.issuances-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.issuance-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--deped-blue);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.issuance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--deped-gold);
+}
+
+.issuance-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.8125rem;
+}
+
+.badge-issuance-type {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.badge-issuance-type.memo {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-issuance-type.advisory {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-issuance-type.meeting {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.issuance-date {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.issuance-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--deped-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.issuance-title a:hover {
+  color: var(--deped-blue-light);
+}
+
+.issuance-excerpt {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.issuance-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-light);
+  font-size: 0.8rem;
+}
+
+.issuance-publisher {
+  color: var(--text-muted);
+}
+
+.btn-view-issuance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--deped-blue);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.btn-view-issuance:hover {
+  color: var(--deped-gold-dark);
+}
+
+/* ==========================================================================
+   DOCUMENT TRACKING SYSTEM (DTS) WIDGET (ENHANCEMENT)
+   ========================================================================== */
+.dts-quick-tracker {
+  background: linear-gradient(135deg, #002b66 0%, #001f42 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.dts-header {
+  margin-bottom: 1.25rem;
+}
+
+.dts-header h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--deped-gold);
+  margin-bottom: 0.25rem;
+}
+
+.dts-header p {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.dts-input-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dts-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.dts-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.dts-input:focus {
+  outline: none;
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   DIVISION MANDATE & CORE VALUES SECTION
+   ========================================================================== */
+.mandate-section {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.value-card {
+  text-align: center;
+  padding: 1.25rem 0.75rem;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.value-card .value-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.value-card h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--deped-navy);
+}
+
+.value-card p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SIDEBAR COMPONENTS
+   ========================================================================== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sidebar-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--deped-navy);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.65rem;
+}
+
+/* Transparency & FOI Badge */
+.transparency-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.seal-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.seal-item:hover {
+  background: #ffffff;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.seal-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.seal-info h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--deped-navy);
+}
+
+.seal-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* Video Showcase Box */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  box-shadow: var(--shadow-md);
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Client Satisfaction Survey (CSM) Sidebar */
+.csm-card {
+  background: linear-gradient(135deg, #f0f7ff 0%, #fffbee 100%);
+  border: 1px solid #bfdbfe;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius-lg);
+}
+
+.csm-card img {
+  width: 160px;
+  margin: 0.75rem auto;
+  border-radius: var(--radius-md);
+  border: 3px solid #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.csm-card h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--deped-navy);
+}
+
+.csm-card p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Visitor Counter Widget */
+.visitor-counter-box {
+  background: var(--deped-navy-dark);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.counter-digits {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+}
+
+.counter-digit {
+  background: #000000;
+  color: var(--deped-gold);
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: monospace;
+}
+
+.counter-stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.65rem;
+}
+
+/* ==========================================================================
+   OFFICIAL REPUBLIC OF THE PHILIPPINES FOOTER
+   ========================================================================== */
+.agency-footer {
+  background-color: var(--deped-navy-deep);
+  color: #cbd5e1;
+  padding: 3.5rem 0 2rem;
+  border-top: 4px solid var(--deped-gold);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr 2fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 2px;
+  background-color: var(--deped-gold);
+}
+
+.footer-agency-info p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: #cbd5e1;
+}
+
+.footer-contact-list svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--deped-gold);
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-links-list a:hover {
+  color: var(--deped-gold);
+  padding-left: 0.35rem;
+}
+
+/* Standard National Gov Footer Bar */
+.standard-govph-footer {
+  background-color: #030a13;
+  color: #94a3b8;
+  padding: 2.5rem 0 1.5rem;
+  font-size: 0.8125rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.govph-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr 4fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.govph-footer-seal img {
+  width: 90px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.govph-footer-col h5 {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+}
+
+.govph-footer-col ul li {
+  margin-bottom: 0.45rem;
+}
+
+.govph-footer-col ul a {
+  color: #94a3b8;
+}
+
+.govph-footer-col ul a:hover {
+  color: #ffffff;
+}
+
+.govph-copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   MODALS (ACCESSIBILITY, CSM, DTS, ISSUANCE VIEWER)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 21, 39, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.95);
+  transition: var(--transition);
+}
+
+.modal-overlay.active .modal-card {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: var(--deped-navy);
+  color: #ffffff;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.modal-close-btn {
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 0.25rem;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  color: var(--deped-gold);
+}
+
+.modal-body {
+  padding: 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+}
+
+.modal-footer {
+  padding: 1rem 1.75rem;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+/* Floating CSM Quick Trigger Button */
+.floating-csm-trigger {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, var(--deped-blue) 0%, var(--deped-navy) 100%);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 25px rgba(0, 40, 85, 0.35);
+  border: 2px solid var(--deped-gold);
+  z-index: 990;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.floating-csm-trigger:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 40, 85, 0.45);
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--deped-navy);
+  color: #ffffff;
+  z-index: 10001;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-nav-drawer.active {
+  right: 0;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.mobile-drawer-links li {
+  margin-bottom: 1rem;
+}
+
+.mobile-drawer-links a {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+  padding: 0.4rem 0;
+}
+
+.mobile-drawer-links a:hover {
+  color: var(--deped-gold);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .portals-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .govph-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-govbar .govph-tagline {
+    display: none;
+  }
+  .masthead-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .agency-identity {
+    flex-direction: column;
+  }
+  .agency-title {
+    font-size: 1.35rem;
+  }
+  .agency-tagline-badge {
+    margin: 0.4rem auto;
+  }
+  .masthead-hotline {
+    width: 100%;
+    justify-content: center;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-search-input {
+    width: 140px;
+  }
+  .nav-search-input:focus {
+    width: 180px;
+  }
+  .slider-container {
+    height: 420px;
+  }
+  .slide-title {
+    font-size: 1.65rem;
+  }
+  .portals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top-grid,
+  .govph-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

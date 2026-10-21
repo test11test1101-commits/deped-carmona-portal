@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Schools Division of Carmona | Department of Education - SDO Carmona Official Portal</title>
+  
+  <!-- Meta & SEO Tags -->
+  <meta name="description" content="The Official Web Portal of the Schools Division Office of Carmona City, Department of Education Region IV-A CALABARZON. Empowering learners through quality MATATAG basic education.">
+  <meta name="keywords" content="DepEd Carmona, SDO Carmona City, Department of Education, Carmona Cavite, Division Memoranda, Citizen's Charter, MATATAG, CALABARZON">
+  <meta name="author" content="Schools Division Office of Carmona City">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://depedcarmona.edu.ph/">
+  <meta property="og:title" content="City Schools Division of Carmona | DepEd SDO Carmona Official Portal">
+  <meta property="og:description" content="Official website of the Schools Division Office of Carmona City. Transforming Learners, Transforming Lives.">
+  <meta property="og:image" content="assets/SDO-Carmona-300x300.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/SDO-Carmona-300x300.jpg">
+  <link rel="apple-touch-icon" href="assets/SDO-Carmona-300x300.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-md">
+
+  <!-- Accessibility Skip Links -->
+  <div class="skip-links">
+    <a href="#main-content">Skip to Main Content</a>
+    <a href="#issuances-hub">Skip to Division Issuances</a>
+    <a href="#dts-tracker">Skip to Document Tracking</a>
+    <a href="#footer-section">Skip to Footer</a>
+  </div>
+
+  <!-- ==========================================================================
+       TOP UTILITY BAR (GOVPH, PHILIPPINE STANDARD TIME, ACCESSIBILITY)
+       ========================================================================== -->
+  <header class="top-govbar" role="region" aria-label="Government and Accessibility Bar">
+    <div class="container">
+      <div class="govbar-left">
+        <a href="https://www.gov.ph" class="govph-brand" target="_blank" rel="noopener noreferrer" title="Official Gazette of the Republic of the Philippines">
+          <span>GOVPH</span>
+        </a>
+        <span class="govph-tagline">The Official Web Portal of the Republic of the Philippines</span>
+      </div>
+
+      <div class="govbar-right">
+        <!-- Philippine Standard Time (PST) -->
+        <div class="pst-widget" title="Synchronized with Philippine Standard Time (DOST-PAGASA)">
+          <span class="pst-icon">⏱</span>
+          <span class="pst-label">PST:</span>
+          <span id="pst-live-clock" class="pst-clock">Loading Philippine Time...</span>
+        </div>
+
+        <!-- Accessibility Suite Toolbar -->
+        <div class="a11y-toolbar" role="toolbar" aria-label="Accessibility Controls">
+          <button id="a11y-statement-btn" class="a11y-btn" title="Accessibility Statement">
+            Statement
+          </button>
+          <button id="a11y-toggle-contrast" class="a11y-btn" title="High Contrast Mode">
+            Contrast
+          </button>
+          <button id="a11y-font-reduce" class="a11y-btn" title="Reduce Text Size">A-</button>
+          <button id="a11y-font-default" class="a11y-btn" title="Default Text Size">A</button>
+          <button id="a11y-font-enlarge" class="a11y-btn" title="Enlarge Text Size">A+</button>
+          <button id="a11y-toggle-dyslexia" class="a11y-btn" title="Dyslexia Friendly Font">Aa</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       AGENCY MASTHEAD (BRANDING, LOGOS, HELPDESK)
+       ========================================================================== -->
+  <section class="agency-masthead" role="banner">
+    <div class="container">
+      <div class="masthead-wrapper">
+        <div class="agency-identity">
+          <div class="agency-logos">
+            <img src="assets/logo-masthead-large.png" alt="Republic of the Philippines Seal" class="logo-gov" width="68" height="68">
+            <img src="assets/SDO-Carmona-300x300.jpg" alt="Schools Division Office of Carmona Official Seal" class="logo-sdo" width="72" height="72">
+          </div>
+          <div class="agency-text">
+            <span class="agency-republic">Republic of the Philippines &bull; Department of Education</span>
+            <h1 class="agency-title">City Schools Division of Carmona</h1>
+            <span class="agency-subtitle">Region IV-A CALABARZON &bull; Division of Carmona City</span>
+            <div class="agency-tagline-badge">
+              <span>★</span> MATATAG: Bansang Makabata, Batang Makabansa
+            </div>
+          </div>
+        </div>
+
+        <!-- Public Assistance and Helpdesk Contact -->
+        <div class="masthead-hotline">
+          <div class="hotline-icon">📞</div>
+          <div class="hotline-details">
+            <span class="hotline-label">Public Assistance & Helpdesk</span>
+            <span class="hotline-number">carmonacity@deped.gov.ph</span>
+            <span style="font-size: 0.725rem; color: #cbd5e1;">Mon - Fri | 8:00 AM - 5:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRIMARY NAVIGATION BAR (WITH DROPDOWNS & SEARCH)
+       ========================================================================== -->
+  <nav class="main-navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">Home</a>
+        </li>
+
+        <!-- About Us Dropdown -->
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            About Us
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openModal('vmv-modal')" class="dropdown-link">DepEd VMV & Mandate</a>
+            <a href="javascript:void(0)" onclick="openModal('history-modal')" class="dropdown-link">SDO Carmona City History</a>
+            <a href="javascript:void(0)" onclick="openModal('charter-modal')" class="dropdown-link">Citizen's Charter & Services</a>
+            <a href="javascript:void(0)" onclick="openModal('officials-modal')" class="dropdown-link">List of Division Officials</a>
+            <a href="javascript:void(0)" onclick="openModal('orgchart-modal')" class="dropdown-link">Organizational Chart</a>
+            <a href="javascript:void(0)" onclick="openModal('privacy-modal')" class="dropdown-link">Data Privacy Notice</a>
+          </div>
+        </li>
+
+        <!-- Issuances Dropdown -->
+        <li class="nav-item">
+          <a href="#issuances-hub" class="nav-link">
+            Issuances
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#issuances-hub" class="dropdown-link">All Issuances Hub</a>
+            <a href="#issuances-hub" class="dropdown-link">Division Memoranda</a>
+            <a href="#issuances-hub" class="dropdown-link">Division Advisories</a>
+            <a href="#issuances-hub" class="dropdown-link">DepEd Memoranda</a>
+            <a href="#issuances-hub" class="dropdown-link">Notice of Meeting</a>
+          </div>
+        </li>
+
+        <!-- Transparency Dropdown -->
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            Transparency
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="javascript:void(0)" onclick="openModal('transparency-modal')" class="dropdown-link">Transparency Seal (NBC 542)</a>
+            <a href="javascript:void(0)" onclick="openModal('procurement-modal')" class="dropdown-link">Procurement & BAC Opportunities</a>
+            <a href="javascript:void(0)" onclick="openModal('procurement-modal')" class="dropdown-link">Request for Quotation (RFQ)</a>
+            <a href="javascript:void(0)" onclick="openModal('careers-modal')" class="dropdown-link">Careers & Job Vacancies</a>
+          </div>
+        </li>
+
+        <!-- Systems Dropdown -->
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link">
+            Systems & Portals
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="https://lis.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="dropdown-link">Learner Information System (LIS) ↗</a>
+            <a href="https://ehmis.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="dropdown-link">Basic Education Information System (BEIS) ↗</a>
+            <a href="https://lrmds.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="dropdown-link">Carmona Learning Resources (LRMS) ↗</a>
+            <a href="#dts-tracker" class="dropdown-link">Document Tracking System (DTS)</a>
+          </div>
+        </li>
+
+        <!-- Contact Us Dropdown -->
+        <li class="nav-item">
+          <a href="#footer-section" class="nav-link">
+            Contact Us
+            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#footer-section" class="dropdown-link">Division Directory</a>
+            <a href="javascript:void(0)" onclick="openModal('csm-modal')" class="dropdown-link">Client Satisfaction Survey (CSM)</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Search & Mobile Toggle -->
+      <div class="nav-actions">
+        <div class="nav-search-box">
+          <span class="nav-search-icon">🔍</span>
+          <input type="search" id="global-search-input" class="nav-search-input" placeholder="Search portal...">
+        </div>
+        <button id="mobile-menu-btn" class="mobile-menu-toggle" aria-label="Open Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SLIDER CAROUSEL (NATIVE BUILT-IN, PLUGIN-FREE)
+       ========================================================================== -->
+  <section class="hero-slider-section" aria-label="Division Announcements Carousel">
+    <div class="slider-container">
+      <div id="slider-track" class="slider-track">
+        
+        <!-- Slide 1: City Schools Division of Carmona MATATAG -->
+        <div class="slide-item" style="background-image: url('assets/CitySchoolDivision-1.jpg');">
+          <div class="container">
+            <div class="slide-content">
+              <span class="slide-badge">City of Carmona &bull; DepEd CALABARZON</span>
+              <h2 class="slide-title">Empowering Lifelong Learners, Transforming Lives</h2>
+              <p class="slide-description">The City Schools Division of Carmona is committed to delivering quality, accessible, and resilient basic education through progressive governance and the DepEd MATATAG agenda.</p>
+              <div class="slide-cta-group">
+                <a href="#issuances-hub" class="btn btn-primary">
+                  <span>Explore Division Issuances</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <button onclick="openModal('charter-modal')" class="btn btn-outline-white">
+                  <span>Citizen's Charter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Gawad Dalub-Kandili 2026 -->
+        <div class="slide-item" style="background-image: linear-gradient(135deg, #021a36 0%, #083464 100%);">
+          <div class="container">
+            <div class="slide-content">
+              <span class="slide-badge" style="background: var(--deped-gold); color:#002855;">Division Recognition &bull; PRAISE</span>
+              <h2 class="slide-title">1st Gawad Dalub-Kandili 2026 Awarding Ceremony</h2>
+              <p class="slide-description">Celebrating exemplary performance, innovation, and unwavering commitment among our passionate educators, school leaders, and non-teaching personnel across Carmona City.</p>
+              <div class="slide-cta-group">
+                <button onclick="openIssuanceModal('DM-337-2026')" class="btn btn-primary">
+                  <span>View Official Awardees (DM 337)</span>
+                </button>
+                <button onclick="openIssuanceModal('DM-338-2026')" class="btn btn-outline-white">
+                  <span>Ceremony Details (DM 338)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Digital Frontline Services & Transparency -->
+        <div class="slide-item" style="background-image: linear-gradient(135deg, #09203f 0%, #003366 100%);">
+          <div class="container">
+            <div class="slide-content">
+              <span class="slide-badge" style="background: #0284c7; color:#ffffff;">Fast-Track Public Service</span>
+              <h2 class="slide-title">Accessible, Transparent, and Accountable Governance</h2>
+              <p class="slide-description">Track communications online in real-time with our Document Tracking System (DTS), access National Transparency Seals, and provide direct feedback through our Client Satisfaction portal.</p>
+              <div class="slide-cta-group">
+                <a href="#dts-tracker" class="btn btn-primary">
+                  <span>Track Document Online</span>
+                </a>
+                <button onclick="openModal('csm-modal')" class="btn btn-outline-white">
+                  <span>Client Feedback (CSM)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Navigation Buttons -->
+      <button id="slider-prev" class="slider-arrow prev" aria-label="Previous Slide">‹</button>
+      <button id="slider-next" class="slider-arrow next" aria-label="Next Slide">›</button>
+
+      <!-- Carousel Dots -->
+      <div id="slider-dots" class="slider-dots"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAST-TRACK ENTERPRISE PORTALS GRID
+       ========================================================================== -->
+  <section class="quick-portals-section" aria-label="DepEd Fast-Track Portals">
+    <div class="container">
+      <div class="portals-grid">
+        
+        <a href="https://lis.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="portal-card" title="Learner Information System">
+          <div class="portal-icon">🎓</div>
+          <h3 class="portal-name">LIS Portal</h3>
+          <p class="portal-desc">Learner Information System & Enrollment</p>
+        </a>
+
+        <a href="https://ehmis.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="portal-card" title="Basic Education Information System">
+          <div class="portal-icon">📊</div>
+          <h3 class="portal-name">BEIS Portal</h3>
+          <p class="portal-desc">School Profiles & Statistical Data</p>
+        </a>
+
+        <a href="https://lrmds.deped.gov.ph" target="_blank" rel="noopener noreferrer" class="portal-card" title="Learning Resource Management and Development System">
+          <div class="portal-icon">📚</div>
+          <h3 class="portal-name">LRMS</h3>
+          <p class="portal-desc">Carmona Learning Resources & Modules</p>
+        </a>
+
+        <a href="#dts-tracker" class="portal-card" title="Document Tracking System">
+          <div class="portal-icon">📑</div>
+          <h3 class="portal-name">DTS Online</h3>
+          <p class="portal-desc">Real-time Document Routing Status</p>
+        </a>
+
+        <a href="javascript:void(0)" onclick="openModal('charter-modal')" class="portal-card" title="Citizen's Charter">
+          <div class="portal-icon">📜</div>
+          <h3 class="portal-name">Citizen's Charter</h3>
+          <p class="portal-desc">Step-by-step Public Service Standards</p>
+        </a>
+
+        <a href="javascript:void(0)" onclick="openModal('transparency-modal')" class="portal-card" title="Transparency Seal">
+          <div class="portal-icon">🛡️</div>
+          <h3 class="portal-name">Transparency</h3>
+          <p class="portal-desc">NBC 542 Compliance & Budgets</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MAIN CONTENT TWO-COLUMN WORKSPACE
+       ========================================================================== -->
+  <main id="main-content" class="main-content-layout">
+    <div class="container">
+      <div class="content-grid">
+        
+        <!-- Left / Primary Column -->
+        <div class="primary-column">
+          
+          <!-- Unified Division Issuances Hub -->
+          <section id="issuances-hub" class="issuances-hub" aria-label="Official Issuances and Memoranda">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span>📁</span> Division Issuances & Updates
+              </h2>
+              <span id="issuance-count-badge" class="badge-issuance-type memo">Loading issuances...</span>
+            </div>
+
+            <!-- Controls: Category Filter Tabs & Live Search -->
+            <div class="issuance-controls">
+              <div class="issuance-tabs" role="tablist">
+                <button class="tab-btn active" data-filter="all">All Issuances</button>
+                <button class="tab-btn" data-filter="memo">Division Memoranda</button>
+                <button class="tab-btn" data-filter="advisory">Advisories</button>
+                <button class="tab-btn" data-filter="meeting">Notices of Meeting</button>
+              </div>
+
+              <div class="issuance-search-bar">
+                <span>🔎</span>
+                <input type="text" id="issuance-search-input" placeholder="Type memo number, subject keyword, or topic (e.g. 339, MOOE, Gawad Dalub, Safety)..." aria-label="Search issuances">
+              </div>
+            </div>
+
+            <!-- Issuance Cards List (Populated via script.js) -->
+            <div id="issuances-list-container" class="issuances-list">
+              <!-- Dynamically rendered -->
+            </div>
+          </section>
+
+          <!-- Real-Time Document Tracking System (DTS) Widget -->
+          <section id="dts-tracker" class="dts-quick-tracker" aria-label="Online Document Tracker">
+            <div class="dts-header">
+              <h3>⚡ SDO Carmona Online Document Tracker</h3>
+              <p>Track the routing and approval status of official division communications, service records, and special orders.</p>
+            </div>
+            <div class="dts-input-group">
+              <input type="text" id="dts-track-code" class="dts-input" placeholder="Enter Tracking No. (e.g. SDO-2026-0842)" value="SDO-2026-0842">
+              <button id="dts-search-btn" class="btn btn-primary">Track Document</button>
+            </div>
+            <div style="font-size: 0.775rem; color: #cbd5e1; margin-top: 0.75rem;">
+              Tip: Click <strong>"Track Document"</strong> with the preloaded code to test the live multi-stage routing simulator.
+            </div>
+          </section>
+
+          <!-- Core Values & DepEd Carmona Mandate -->
+          <section class="mandate-section" aria-label="DepEd Core Values and Mandate">
+            <div class="section-header">
+              <h2 class="section-title">
+                <span>🏛️</span> Core Values & DepEd Vision
+              </h2>
+            </div>
+            <p style="font-size: 0.95rem; color: #334155; line-height: 1.7;">
+              We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation. As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders.
+            </p>
+
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon">🙏</div>
+                <h4>MAKA-DIYOS</h4>
+                <p>Expresses spiritual beliefs with respect for diverse faiths.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>MAKATAO</h4>
+                <p>Upholds human dignity, empathy, and social justice.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">🌿</div>
+                <h4>MAKAKALIKASAN</h4>
+                <p>Stewards of the environment and sustainable community.</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">🇵🇭</div>
+                <h4>MAKABANSA</h4>
+                <p>Demonstrates genuine love of country and civic pride.</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right / Sidebar Column -->
+        <aside class="sidebar" role="complementary" aria-label="Division Information and Seals">
+          
+          <!-- Transparency & FOI Badges -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <span>Good Governance</span>
+              <span style="font-size: 0.75rem; color: #16a34a; font-weight: 700;">COMPLIANT</span>
+            </h3>
+            <div class="transparency-badges">
+              <a href="javascript:void(0)" onclick="openModal('transparency-modal')" class="seal-item">
+                <img src="assets/transparency-seal-160x160.png" alt="National Transparency Seal">
+                <div class="seal-info">
+                  <h4>Transparency Seal</h4>
+                  <p>National Budget Circular 542 compliant disclosure.</p>
+                </div>
+              </a>
+
+              <a href="https://www.foi.gov.ph" target="_blank" rel="noopener noreferrer" class="seal-item">
+                <img src="assets/foi-logo-160x160.png" alt="Freedom of Information Portal">
+                <div class="seal-info">
+                  <h4>Freedom of Information</h4>
+                  <p>Executive Order No. 2, s. 2016 implementation.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- SDO Carmona Presentation Showcase -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <span>Division Showcase</span>
+              <span style="font-size: 0.75rem; color: var(--deped-blue); font-weight: 700;">VIDEO</span>
+            </h3>
+            <div class="video-container">
+              <video controls preload="metadata" poster="assets/CitySchoolDivision-1.jpg">
+                <source src="https://depedcarmona.edu.ph/wp-content/uploads/2026/06/SDO-BANNER-1.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.65rem; text-align: center;">
+              SDO Carmona City: A Trailblazer in Educational Transformation
+            </p>
+          </div>
+
+          <!-- Client Satisfaction Survey (CSM) Card -->
+          <div class="csm-card">
+            <h4>Client Satisfaction Measurement</h4>
+            <p>Your feedback fuels our continuous improvement. Scan or click below to participate.</p>
+            <img src="assets/csm-code-only-300x254.png" alt="CSM QR Code" width="160">
+            <button onclick="openModal('csm-modal')" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+              Fill Out Feedback Form
+            </button>
+          </div>
+
+          <!-- Official Social Media -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-card-title">
+              <span>Official Community</span>
+            </h3>
+            <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid var(--border-light); text-align: center;">
+              <div style="font-size: 2rem; margin-bottom: 0.35rem;">📱</div>
+              <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--deped-navy);">DepEd Tayo Carmona City</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0.35rem 0 0.85rem;">Follow official Facebook updates, advisories, and school activities.</p>
+              <a href="https://www.facebook.com/profile.php?id=61583318726796" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.825rem; padding: 0.5rem 1rem;">
+                Visit Official Facebook
+              </a>
+            </div>
+          </div>
+
+          <!-- Real-Time Visitor Counter Widget -->
+          <div class="visitor-counter-box">
+            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--deped-gold); font-weight: 700;">
+              Total Verified Portal Visits
+            </div>
+            <div id="visitor-count-digits" class="counter-digits">
+              <!-- Rendered via JS -->
+            </div>
+            <div class="counter-stats">
+              <span>Today: <strong>1,482</strong></span>
+              <span>This Week: <strong>9,240</strong></span>
+              <span>Status: <strong style="color: #4ade80;">Active</strong></span>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       OFFICIAL AGENCY & REPUBLIC FOOTER (GWDS 2.0 STANDARD)
+       ========================================================================== -->
+  <footer id="footer-section" class="agency-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- Col 1: Division Info -->
+        <div class="footer-col footer-agency-info">
+          <h4>SDO Carmona City</h4>
+          <p>
+            The City Schools Division of Carmona is committed to fostering quality basic education that is inclusive, relevant, and responsive to the learners of Carmona City.
+          </p>
+          <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+            <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px;">Region IV-A</span>
+            <span style="font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); padding: 0.3rem 0.6rem; border-radius: 4px;">Province of Cavite</span>
+            <span style="font-size: 0.75rem; background: rgba(245, 168, 28, 0.2); color: var(--deped-gold); padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 700;">MATATAG</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Public Frontline</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openModal('charter-modal')">Citizen's Charter Handbook</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('transparency-modal')">Transparency Seal NBC 542</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('procurement-modal')">Invitations to Bid / BAC</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('careers-modal')">Careers & Job Openings</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('privacy-modal')">Data Privacy Compliance</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Enterprise Portals -->
+        <div class="footer-col">
+          <h4>DepEd Enterprise</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://lis.deped.gov.ph" target="_blank" rel="noopener noreferrer">Learner Information System (LIS)</a></li>
+            <li><a href="https://ehmis.deped.gov.ph" target="_blank" rel="noopener noreferrer">Basic Education Info System (BEIS)</a></li>
+            <li><a href="https://lrmds.deped.gov.ph" target="_blank" rel="noopener noreferrer">Learning Resources (LRMS)</a></li>
+            <li><a href="https://www.foi.gov.ph" target="_blank" rel="noopener noreferrer">eFOI Portal Philippines</a></li>
+            <li><a href="https://www.deped.gov.ph" target="_blank" rel="noopener noreferrer">DepEd Central Office</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Directory -->
+        <div class="footer-col">
+          <h4>Contact & Location</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <span>📍</span>
+              <span>Schools Division Office of Carmona, Carmona City, Cavite 4116</span>
+            </li>
+            <li>
+              <span>✉️</span>
+              <span>carmonacity@deped.gov.ph</span>
+            </li>
+            <li>
+              <span>🕒</span>
+              <span>Monday to Friday<br>8:00 AM – 5:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Republic of the Philippines National Footer Bar -->
+    <div class="standard-govph-footer">
+      <div class="container">
+        <div class="govph-footer-grid">
+          
+          <div class="govph-footer-seal">
+            <img src="assets/logo-masthead-large.png" alt="Republic of the Philippines Seal" width="80">
+          </div>
+
+          <div class="govph-footer-col">
+            <h5>Republic of the Philippines</h5>
+            <p>All content is in the public domain unless otherwise stated.</p>
+          </div>
+
+          <div class="govph-footer-col">
+            <h5>Government Links</h5>
+            <ul>
+              <li><a href="https://president.gov.ph" target="_blank" rel="noopener noreferrer">Office of the President</a></li>
+              <li><a href="https://ovp.gov.ph" target="_blank" rel="noopener noreferrer">Office of the Vice President</a></li>
+              <li><a href="https://senate.gov.ph" target="_blank" rel="noopener noreferrer">Senate of the Philippines</a></li>
+              <li><a href="https://www.congress.gov.ph" target="_blank" rel="noopener noreferrer">House of Representatives</a></li>
+            </ul>
+          </div>
+
+          <div class="govph-footer-col">
+            <h5>Judiciary & Commissions</h5>
+            <ul>
+              <li><a href="https://sc.judiciary.gov.ph" target="_blank" rel="noopener noreferrer">Supreme Court of the Philippines</a></li>
+              <li><a href="https://ca.judiciary.gov.ph" target="_blank" rel="noopener noreferrer">Court of Appeals</a></li>
+              <li><a href="https://sb.judiciary.gov.ph" target="_blank" rel="noopener noreferrer">Sandiganbayan</a></li>
+              <li><a href="https://www.csc.gov.ph" target="_blank" rel="noopener noreferrer">Civil Service Commission</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="govph-copyright">
+          &copy; 2026 Schools Division Office of Carmona City &bull; Department of Education Region IV-A CALABARZON. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING TRIGGER FOR CLIENT SATISFACTION SURVEY (CSM)
+       ========================================================================== -->
+  <button class="floating-csm-trigger" onclick="openModal('csm-modal')" aria-label="Open Client Satisfaction Feedback Form">
+    <span>⭐</span>
+    <span>Client Feedback / CSM</span>
+  </button>
+
+  <!-- ==========================================================================
+       INTERACTIVE MODAL DIALOGS
+       ========================================================================== -->
+
+  <!-- Modal 1: Issuance Viewer Modal -->
+  <div id="issuance-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="issuance-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="issuance-modal-title" class="modal-title">Division Issuance Details</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="issuance-modal-body" class="modal-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Document Tracking Status Modal -->
+  <div id="dts-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="dts-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="dts-modal-title" class="modal-title">Document Tracking Live Routing</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div id="dts-modal-body" class="modal-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Tracking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Client Satisfaction Measurement (CSM) Survey Form -->
+  <div id="csm-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="csm-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="csm-modal-title" class="modal-title">Client Satisfaction Measurement (CSM)</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 1.25rem;">
+          Help us serve you better. In compliance with the Anti-Red Tape Authority (ARTA) and Republic Act 11032, please rate your service experience with SDO Carmona City.
+        </p>
+
+        <form id="csm-feedback-form">
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--deped-navy);">Client Classification:</label>
+            <select required style="width: 100%; padding: 0.65rem; border: 1px solid var(--border-light); border-radius: 6px; font-family: inherit;">
+              <option value="">-- Please Select --</option>
+              <option value="Teacher">Public School Teacher</option>
+              <option value="SchoolHead">School Head / Principal</option>
+              <option value="NonTeaching">Non-Teaching Personnel</option>
+              <option value="Parent">Parent / Guardian</option>
+              <option value="Student">Learner / Student</option>
+              <option value="GeneralPublic">General Public / Transacting Citizen</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--deped-navy);">Transacting Office / Service Rendered:</label>
+            <select required style="width: 100%; padding: 0.65rem; border: 1px solid var(--border-light); border-radius: 6px; font-family: inherit;">
+              <option value="">-- Please Select Office --</option>
+              <option value="Records">Records Unit (Issuance of Documents, Certifications)</option>
+              <option value="HR">Personnel / HR Unit (Service Record, Appointments)</option>
+              <option value="Accounting">Accounting / Cashier (Payments, MOOE Liquidations)</option>
+              <option value="CID">Curriculum Implementation Division (CID)</option>
+              <option value="SGOD">School Governance & Operations Division (SGOD)</option>
+              <option value="OSDS">Office of the Schools Division Superintendent (OSDS)</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--deped-navy);">Overall Satisfaction Rating:</label>
+            <div style="display: flex; gap: 1rem; align-items: center; font-size: 1.25rem;">
+              <label style="cursor: pointer;"><input type="radio" name="rating" value="5" required checked> ⭐⭐⭐⭐⭐ (Outstanding)</label>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center; font-size: 1.25rem; margin-top: 0.25rem;">
+              <label style="cursor: pointer;"><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐ (Very Satisfied)</label>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.25rem;">
+            <label style="display:block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--deped-navy);">Suggestions / Commendations / Remarks:</label>
+            <textarea rows="3" style="width: 100%; padding: 0.65rem; border: 1px solid var(--border-light); border-radius: 6px; font-family: inherit;" placeholder="Please share your comments to help us improve..."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+            <button type="button" class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Accessibility Statement Modal -->
+  <div id="a11y-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="a11y-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="a11y-modal-title" class="modal-title">Website Accessibility Statement</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" style="line-height: 1.7;">
+        <h4 style="font-weight: 800; color: var(--deped-navy); margin-bottom: 0.5rem;">Compliance with Web Content Accessibility Guidelines (WCAG 2.1)</h4>
+        <p style="margin-bottom: 1rem;">
+          The City Schools Division of Carmona web portal is designed and maintained in strict adherence to the Web Content Accessibility Guidelines (WCAG 2.1 Level AA) and ISO/IEC 40500 standards for public electronic services.
+        </p>
+        <h5 style="font-weight: 700; color: var(--deped-navy); margin-bottom: 0.25rem;">Key Accessibility Features:</h5>
+        <ul style="list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem;">
+          <li><strong>Keyboard Navigation:</strong> All interactive elements, menus, forms, and dialogs are navigable using standard keyboard focus (Tab, Enter, Space, Escape).</li>
+          <li><strong>High Contrast Mode:</strong> One-click high-contrast mode conforming to AAA contrast ratios.</li>
+          <li><strong>Font Scalability:</strong> Dynamic resizing controls allowing scalable typography without breaking layout structure.</li>
+          <li><strong>Dyslexia Friendly Font:</strong> Alternates typography to high-legibility sans-serif spacing.</li>
+          <li><strong>Semantic Landmarks:</strong> Proper HTML5 landmark structure (<header>, <nav>, <main>, <aside>, <footer>) for screen readers.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Statement</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Citizen's Charter Modal -->
+  <div id="charter-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="charter-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="charter-modal-title" class="modal-title">Citizen's Charter & Frontline Services</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 1rem; color: #475569;">
+          In accordance with Republic Act No. 11032 (Ease of Doing Business and Efficient Government Service Delivery Act of 2018), here are the standard processing times for frontline services of SDO Carmona:
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border-left: 3px solid var(--deped-blue);">
+            <strong style="color: var(--deped-navy);">Issuance of Requested Official Documents / Certifications (Records)</strong>
+            <div style="font-size: 0.8rem; color: #64748b;">Processing Time: 1 to 3 Working Days &bull; Fee: None</div>
+          </div>
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border-left: 3px solid var(--deped-blue);">
+            <strong style="color: var(--deped-navy);">Processing of Application for Leave of Absence (Personnel)</strong>
+            <div style="font-size: 0.8rem; color: #64748b;">Processing Time: 1 to 2 Working Days &bull; Fee: None</div>
+          </div>
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border-left: 3px solid var(--deped-blue);">
+            <strong style="color: var(--deped-navy);">Review and Approval of Travel Authority (OSDS)</strong>
+            <div style="font-size: 0.8rem; color: #64748b;">Processing Time: 2 Working Days &bull; Fee: None</div>
+          </div>
+          <div style="background: #f8fafc; padding: 0.85rem; border-radius: 6px; border-left: 3px solid var(--deped-blue);">
+            <strong style="color: var(--deped-navy);">Evaluation and Processing of School MOOE Cash Advances (Accounting)</strong>
+            <div style="font-size: 0.8rem; color: #64748b;">Processing Time: 3 to 5 Working Days &bull; Fee: None</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Charter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: Transparency Seal Modal -->
+  <div id="transparency-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="transparency-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="transparency-modal-title" class="modal-title">National Transparency Seal Compliance</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 1rem; color: #334155;">
+          A pearl buried inside a tightly-shut shell is practically worthless. Government information is a pearl, meant to be shared with the public.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem;">
+          <div style="padding: 0.75rem; background: #f1f5f9; border-radius: 6px;">
+            <strong>I. Agency Mandate, Vision, Mission, and Officials</strong>
+          </div>
+          <div style="padding: 0.75rem; background: #f1f5f9; border-radius: 6px;">
+            <strong>II. Annual Financial Reports & Budget Allocations</strong>
+          </div>
+          <div style="padding: 0.75rem; background: #f1f5f9; border-radius: 6px;">
+            <strong>III. DBM Approved Budgets & Targets (FY 2026 - 2027)</strong>
+          </div>
+          <div style="padding: 0.75rem; background: #f1f5f9; border-radius: 6px;">
+            <strong>IV. Projects, Programs and Implementation Status</strong>
+          </div>
+          <div style="padding: 0.75rem; background: #f1f5f9; border-radius: 6px;">
+            <strong>V. Annual Procurement Plan (APP Non-CSE and CSE)</strong>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close-trigger" style="background: #e2e8f0; color: #334155;">Close Window</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-nav-drawer" role="dialog" aria-modal="true">
+    <div class="mobile-drawer-header">
+      <h3 style="font-size: 1.1rem; color: var(--deped-gold); font-weight: 800;">Navigation Menu</h3>
+      <button id="mobile-drawer-close" style="font-size: 1.5rem; color: #ffffff;">&times;</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('charter-modal')">Citizen's Charter</a></li>
+      <li><a href="#issuances-hub">Division Issuances</a></li>
+      <li><a href="#dts-tracker">Document Tracking</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('transparency-modal')">Transparency Seal</a></li>
+      <li><a href="javascript:void(0)" onclick="openModal('csm-modal')">Client Feedback (CSM)</a></li>
+      <li><a href="#footer-section">Contact Directory</a></li>
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
