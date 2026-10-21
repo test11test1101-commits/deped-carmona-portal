@@ -7,36 +7,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cinzel:wght@600;700&display=swap');
 
 :root {
-  /* Official Brand Colors */
-  --deped-navy: #002855;
-  --deped-navy-dark: #001833;
-  --deped-navy-deep: #071527;
-  --deped-blue: #004b98;
-  --deped-blue-light: #0b69c7;
-  --deped-gold: #f5a81c;
-  --deped-gold-light: #ffc955;
-  --deped-gold-dark: #d48b0a;
-  --deped-red: #c8102e;
+  /* Official Visual Identity: City Schools Division of Carmona */
+  --deped-navy: #123d2c;            /* Forest green (Primary brand color) */
+  --deped-navy-dark: #0d2a1e;       /* Deep Forest Green */
+  --deped-navy-deep: #081d15;       /* Darkest Forest Night */
+  --deped-blue: #175039;            /* Medium Forest Green (Interactive & Accents) */
+  --deped-blue-light: #1e684a;      /* Vibrant Forest Green (Hover & Links) */
+  --deped-gold: #d6ad43;            /* Warm gold (Accent color) */
+  --deped-gold-light: #e5c365;      /* Warm gold light */
+  --deped-gold-dark: #b88e28;       /* Deep warm gold */
+  --deped-red: #c8102e;             /* DepEd red retained for official alerts */
   --deped-red-dark: #9e0b23;
-  --gov-blue: #003366;
+  --gov-blue: #123d2c;
   
   /* Neutral & UI Colors */
-  --bg-body: #f4f6fa;
+  --bg-body: #f4f6f5;               /* Soft white (Page background) */
   --bg-surface: #ffffff;
-  --bg-subtle: #f8fafc;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  --bg-subtle: #edf3f0;
+  --text-main: #13251d;
+  --text-muted: #4f6157;
+  --text-light: #7d8f85;
   --text-inverse: #ffffff;
-  --border-light: #e2e8f0;
-  --border-subtle: #cbd5e1;
+  --border-light: #d8e3dc;
+  --border-subtle: #c0d1c7;
 
-  /* Shadows */
+  /* Shadows with organic forest ambient tint */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 4px rgba(0, 40, 85, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 40, 85, 0.08);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 40, 85, 0.12), 0 8px 10px -6px rgba(0, 40, 85, 0.08);
-  --shadow-xl: 0 20px 35px -5px rgba(0, 40, 85, 0.16);
+  --shadow-sm: 0 2px 4px rgba(18, 61, 44, 0.06);
+  --shadow-md: 0 4px 12px rgba(18, 61, 44, 0.08);
+  --shadow-lg: 0 10px 25px -5px rgba(18, 61, 44, 0.12), 0 8px 10px -6px rgba(18, 61, 44, 0.08);
+  --shadow-xl: 0 20px 35px -5px rgba(18, 61, 44, 0.16);
 
   /* Layout */
   --header-height: 85px;
@@ -297,7 +297,7 @@ button {
    MASTHEAD / AGENCY BRANDING HEADER
    ========================================================================== */
 .agency-masthead {
-  background: linear-gradient(135deg, var(--deped-navy) 0%, #001f42 100%);
+  background: linear-gradient(135deg, var(--deped-navy) 0%, var(--deped-navy-dark) 100%);
   color: #ffffff;
   padding: 1.25rem 0;
   position: relative;
@@ -312,7 +312,7 @@ button {
   right: 0;
   width: 50%;
   height: 100%;
-  background: radial-gradient(circle at 80% 20%, rgba(245, 168, 28, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle at 80% 20%, rgba(214, 173, 67, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -524,7 +524,7 @@ button {
 }
 
 .dropdown-link:hover {
-  background-color: #f0f7ff;
+  background-color: #edf5f1;
   color: var(--deped-blue);
   padding-left: 1.5rem;
 }
@@ -562,7 +562,7 @@ button {
   background: #ffffff;
   color: var(--text-main);
   width: 240px;
-  box-shadow: 0 0 0 3px rgba(245, 168, 28, 0.4);
+  box-shadow: 0 0 0 3px rgba(214, 173, 67, 0.45);
 }
 
 .nav-search-icon {
@@ -617,7 +617,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(7, 21, 39, 0.95) 0%, rgba(7, 21, 39, 0.75) 50%, rgba(7, 21, 39, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(8, 29, 21, 0.95) 0%, rgba(8, 29, 21, 0.78) 50%, rgba(8, 29, 21, 0.45) 100%);
 }
 
 .slide-content {
@@ -681,13 +681,13 @@ button {
 .btn-primary {
   background-color: var(--deped-gold);
   color: var(--deped-navy-dark);
-  box-shadow: 0 4px 15px rgba(245, 168, 28, 0.35);
+  box-shadow: 0 4px 15px rgba(214, 173, 67, 0.35);
 }
 
 .btn-primary:hover {
   background-color: var(--deped-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 168, 28, 0.45);
+  box-shadow: 0 6px 20px rgba(214, 173, 67, 0.45);
 }
 
 .btn-outline-white {
@@ -810,7 +810,7 @@ button {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(0, 75, 152, 0.1) 0%, rgba(245, 168, 28, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(18, 61, 44, 0.12) 0%, rgba(214, 173, 67, 0.18) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1068,7 +1068,7 @@ button {
    DOCUMENT TRACKING SYSTEM (DTS) WIDGET (ENHANCEMENT)
    ========================================================================== */
 .dts-quick-tracker {
-  background: linear-gradient(135deg, #002b66 0%, #001f42 100%);
+  background: linear-gradient(135deg, var(--deped-navy) 0%, var(--deped-navy-dark) 100%);
   color: #ffffff;
   border-radius: var(--radius-lg);
   padding: 1.75rem;
@@ -1076,6 +1076,7 @@ button {
   box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(214, 173, 67, 0.3);
 }
 
 .dts-header {
@@ -1258,8 +1259,8 @@ button {
 
 /* Client Satisfaction Survey (CSM) Sidebar */
 .csm-card {
-  background: linear-gradient(135deg, #f0f7ff 0%, #fffbee 100%);
-  border: 1px solid #bfdbfe;
+  background: linear-gradient(135deg, #edf5f0 0%, #fcf7ed 100%);
+  border: 1px solid #c8d9cf;
   text-align: center;
   padding: 1.5rem 1rem;
   border-radius: var(--radius-lg);
@@ -1395,7 +1396,7 @@ button {
 
 /* Standard National Gov Footer Bar */
 .standard-govph-footer {
-  background-color: #030a13;
+  background-color: #05140e;
   color: #94a3b8;
   padding: 2.5rem 0 1.5rem;
   font-size: 0.8125rem;
@@ -1530,17 +1531,17 @@ button {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: linear-gradient(135deg, var(--deped-blue) 0%, var(--deped-navy) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--deped-gold) 0%, var(--deped-gold-dark) 100%);
+  color: var(--deped-navy-dark);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.85rem;
-  box-shadow: 0 8px 25px rgba(0, 40, 85, 0.35);
-  border: 2px solid var(--deped-gold);
+  box-shadow: 0 8px 25px rgba(18, 61, 44, 0.35);
+  border: 2px solid #ffffff;
   z-index: 990;
   cursor: pointer;
   transition: var(--transition);
@@ -1548,7 +1549,8 @@ button {
 
 .floating-csm-trigger:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 40, 85, 0.45);
+  background: linear-gradient(135deg, var(--deped-gold-light) 0%, var(--deped-gold) 100%);
+  box-shadow: 0 12px 30px rgba(18, 61, 44, 0.45);
 }
 
 /* Mobile Navigation Drawer */
